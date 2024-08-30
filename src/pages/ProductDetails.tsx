@@ -32,7 +32,7 @@ const ProductDetail: React.FC<ProductProps> = ({ onAddCart, onRemoveCart, cart }
         setProduct(response.data);
       })
       .catch((error) => {
-        console.log("Failed to fetch product data.");
+        console.error("Failed to fetch product data.", error);
       });
   }, [id]);
 
