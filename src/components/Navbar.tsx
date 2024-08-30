@@ -66,6 +66,7 @@ const Navbar: React.FC<NavbarValues> = ({ cartCount }) => {
       .then((response) => {
         setProducts(response.data);
         console.log(response.data);
+        console.log(products);
       })
       .catch((error) => {
         console.error("Error fetching products:", error);
