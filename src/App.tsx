@@ -34,7 +34,7 @@ const App: React.FC = () => {
             <Route path="/:category" element={<Product onAddCart={handleAddToCart} onRemoveCart={handleRemoveFromCart} cart={cart} />} />
             <Route path="/product" element={<Product onAddCart={handleAddToCart} onRemoveCart={handleRemoveFromCart} cart={cart} />} />
             <Route path="/product/:id" element={<ProductDetail onAddCart={handleAddToCart} onRemoveCart={handleRemoveFromCart} cart={cart} />} />
-            <Route path="/cart" element={<Cart cart={cart} />} />
+            <Route path="/cart" element={<Cart cart={cart} setCart={setCart} />} />
           </Route>
         </Routes>
       </Router>

@@ -12,8 +12,9 @@ interface ProductValues {
 
 interface CartValues {
   cart: number[];
+  setCart: (cart: number[]) => void;
 }
-const Cart: React.FC<CartValues> = ({ cart }) => {
+const Cart: React.FC<CartValues> = ({ cart, setCart }) => {
   const [products, setProducts] = React.useState<ProductValues[]>([]);
 
   const fetchData = async () => {
@@ -34,10 +35,13 @@ const Cart: React.FC<CartValues> = ({ cart }) => {
 
   const cartItems = products.filter((product) => cart.includes(product.id));
   const totalPrice = cartItems.reduce((total, product) => total + product.price, 0);
+  const clearCart = () => {
+    setCart([]);
+  };
 
   return (
     <div style={{ width: "100vw", position: "fixed", top: "100px", zIndex: 100, backgroundColor: "white", boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.1)" }}>
-      <TableCart cartItems={cartItems} totalPrice={totalPrice} />
+      <TableCart cartItems={cartItems} totalPrice={totalPrice} onClearCart={clearCart} />
     </div>
   );
 };
