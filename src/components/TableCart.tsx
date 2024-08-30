@@ -9,7 +9,6 @@ import Paper from "@mui/material/Paper";
 import { CardMedia } from "@mui/material";
 import Container from "@mui/material/Container";
 import Button from "@mui/material/Button";
-import CssBaseline from "@mui/material/CssBaseline";
 
 interface CartValue {
   id: number;
